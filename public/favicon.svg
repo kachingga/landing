@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Kachingga: a coin split in two (splitting expenses). Every app icon is generated from this file. -->
+  <defs>
+    <clipPath id="l"><polygon points="0,0 300,0 212,512 0,512"/></clipPath>
+    <clipPath id="r"><polygon points="324,0 512,0 512,512 236,512"/></clipPath>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="#0C5C3C"/>
+  <g clip-path="url(#l)" transform="translate(-14 6)"><circle cx="256" cy="256" r="164" fill="#F6AB6B"/></g>
+  <g clip-path="url(#r)" transform="translate(14 -6)"><circle cx="256" cy="256" r="164" fill="#FFFDFA"/></g>
+</svg>

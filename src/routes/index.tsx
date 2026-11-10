@@ -1,23 +1,80 @@
 import { createFileRoute } from "@tanstack/react-router";
+import type { ReactNode } from "react";
+import { EntrarButton, Page, PhoneFrame } from "@/components/site";
+import grupo from "@/assets/celu-2-grupo-claro.webp.asset.json";
+import gasto from "@/assets/celu-5-gasto-claro.webp.asset.json";
+import dividir from "@/assets/celu-6-dividir-claro.webp.asset.json";
+import saldar from "@/assets/celu-3-saldar-claro.webp.asset.json";
 
-// The home route ships no og:image, so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Kachingga" },
+      { name: "description", content: "Dividí gastos con tu grupo" },
+      { property: "og:title", content: "Kachingga" },
+      { property: "og:description", content: "Dividí gastos con tu grupo" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
+function Feature({ n, title, children, image, reverse }: { n: string; title: string; children: ReactNode; image?: ReactNode; reverse?: boolean }) {
+  return (
+    <section className={`border-t border-border ${reverse ? "bg-secondary/60" : ""}`}>
+      <div className={`mx-auto flex max-w-6xl flex-col gap-10 px-5 py-16 md:flex-row md:items-center md:gap-16 md:py-24 ${reverse ? "md:flex-row-reverse" : ""}`}>
+        <div className="md:w-1/2">
+          <span className="font-display text-sm font-bold tracking-widest text-accent">{n}</span>
+          <h2 className="mt-2 font-display text-3xl font-extrabold text-primary sm:text-4xl">{title}</h2>
+          <div className="mt-4 space-y-3 text-lg leading-relaxed text-muted-foreground">{children}</div>
+        </div>
+        {image && <div className="md:w-1/2">{image}</div>}
+      </div>
+    </section>
+  );
+}
+
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <Page>
+      <section className="relative overflow-hidden">
+        <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-peach" aria-hidden />
+        <div className="relative mx-auto flex max-w-6xl flex-col gap-12 px-5 py-16 md:flex-row md:items-center md:py-24">
+          <div className="md:w-1/2">
+            <p className="font-display font-bold text-accent">Cuentas claras. Amistades intactas.</p>
+            <h1 className="mt-3 font-display text-5xl font-extrabold leading-[1.05] text-primary sm:text-6xl">
+              Dividí gastos con tu grupo
+            </h1>
+            <p className="mt-5 max-w-md text-lg text-muted-foreground">
+              Cargá lo que gastó cada uno, mirá quién le debe a quién y saldá con un alias. En el celu o en la compu.
+            </p>
+            <EntrarButton className="mt-8 px-8 py-3.5 text-lg" />
+          </div>
+          <div className="md:w-1/2">
+            <PhoneFrame src={grupo.url} alt="Pantalla de un grupo en Kachingga" />
+          </div>
+        </div>
+      </section>
+
+      <Feature n="01" title="Cargá los gastos" image={<PhoneFrame src={gasto.url} alt="Cargar un gasto" />}>
+        <p>Anotá quién pagó y en qué moneda: pesos, dólares y otras, con el dólar blue o el oficial.</p>
+        <p>La categoría se sugiere sola.</p>
+      </Feature>
+      <Feature n="02" title="Dividí como quieras" reverse image={<PhoneFrame src={dividir.url} alt="Dividir un gasto" />}>
+        <p>En partes iguales, por monto o por porcentaje.</p>
+      </Feature>
+      <Feature n="03" title="Mirá los saldos" image={<PhoneFrame src={grupo.url} alt="Saldos del grupo" />}>
+        <p>Quién le debe a quién, separado por moneda.</p>
+        <p>Y la menor cantidad de transferencias para quedar a mano.</p>
+      </Feature>
+      <Feature n="04" title="Saldá con el alias" reverse image={<PhoneFrame src={saldar.url} alt="Saldar una deuda" />}>
+        <p>Copiás el alias y el monto, transferís desde tu banco o Mercado Pago y lo marcás como pagado.</p>
+        <p>Sin comisiones: la plata no pasa por la app.</p>
+      </Feature>
+      <Feature n="05" title="Totales y export">
+        <p>Cuánto gastaron por categoría o por mes, y exportá todo a CSV o JSON.</p>
+      </Feature>
+    </Page>
   );
 }

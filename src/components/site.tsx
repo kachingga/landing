@@ -51,6 +51,20 @@ export function PhoneFrame({ src, alt }: { src: string; alt: string }) {
   );
 }
 
+export function BrowserFrame({ src, alt }: { src: string; alt: string }) {
+  return (
+    <div className="overflow-hidden rounded-xl border border-border bg-card shadow-2xl">
+      <div className="flex items-center gap-1.5 border-b border-border bg-muted px-3 py-2">
+        <span className="h-2.5 w-2.5 rounded-full bg-accent" />
+        <span className="h-2.5 w-2.5 rounded-full bg-peach" />
+        <span className="h-2.5 w-2.5 rounded-full bg-primary/40" />
+        <span className="ml-3 flex-1 truncate rounded-md bg-background px-3 py-0.5 text-xs text-muted-foreground">app.kachingga.com</span>
+      </div>
+      <img src={src} alt={alt} width={1920} height={1200} loading="lazy" className="block w-full" />
+    </div>
+  );
+}
+
 export function Page({ children }: { children: ReactNode }) {
   return (
     <div className="min-h-screen bg-background text-foreground">

@@ -158,3 +158,14 @@
     color: var(--color-foreground);
   }
 }
+
+@layer components {
+  .legal { color: var(--color-foreground); line-height: 1.7; }
+  .legal h1 { font-family: var(--font-display); font-size: 2.25rem; font-weight: 800; color: var(--color-primary); }
+  .legal h2 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--color-primary); margin-top: 2.5rem; }
+  .legal p, .legal ul { margin-top: 0.9rem; }
+  .legal ul { list-style: disc; padding-left: 1.4rem; }
+  .legal li { margin-top: 0.35rem; }
+  .legal a { color: var(--color-primary); text-decoration: underline; }
+  .legal em { color: var(--color-muted-foreground); }
+}

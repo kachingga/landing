@@ -1,9 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type { ReactNode } from "react";
-import { EntrarButton, Page, PhoneFrame } from "@/components/site";
+import { BrowserFrame, EntrarButton, Page, PhoneFrame } from "@/components/site";
 import grupo from "@/assets/celu-2-grupo-claro.webp.asset.json";
 import gasto from "@/assets/celu-5-gasto-claro.webp.asset.json";
 import dividir from "@/assets/celu-6-dividir-claro.webp.asset.json";
+import grupoCompu from "@/assets/compu-2-grupo-claro.webp.asset.json";
+import totales from "@/assets/compu-4-totales-claro.webp.asset.json";
 import saldar from "@/assets/celu-3-saldar-claro.webp.asset.json";
 
 export const Route = createFileRoute("/")({
@@ -51,28 +53,33 @@ function Index() {
             </p>
             <EntrarButton className="mt-8 px-8 py-3.5 text-lg" />
           </div>
-          <div className="md:w-1/2">
-            <PhoneFrame src={grupo.url} alt="Pantalla de un grupo en Kachingga" />
+          <div className="md:w-3/5">
+            <div className="md:hidden">
+              <PhoneFrame src={grupo.url} alt="Pantalla de un grupo en Kachingga" />
+            </div>
+            <div className="hidden md:block">
+              <BrowserFrame src={grupoCompu.url} alt="Pantalla de un grupo en Kachingga" />
+            </div>
           </div>
         </div>
       </section>
 
-      <Feature n="01" title="Cargá los gastos" image={<PhoneFrame src={gasto.url} alt="Cargar un gasto" />}>
+      <Feature n="01" title="Cargá los gastos" reverse image={<PhoneFrame src={gasto.url} alt="Cargar un gasto" />}>
         <p>Anotá quién pagó y en qué moneda: pesos, dólares y otras, con el dólar blue o el oficial.</p>
         <p>La categoría se sugiere sola.</p>
       </Feature>
-      <Feature n="02" title="Dividí como quieras" reverse image={<PhoneFrame src={dividir.url} alt="Dividir un gasto" />}>
+      <Feature n="02" title="Dividí como quieras" image={<PhoneFrame src={dividir.url} alt="Dividir un gasto" />}>
         <p>En partes iguales, por monto o por porcentaje.</p>
       </Feature>
-      <Feature n="03" title="Mirá los saldos" image={<PhoneFrame src={grupo.url} alt="Saldos del grupo" />}>
+      <Feature n="03" title="Mirá los saldos" reverse image={<PhoneFrame src={grupo.url} alt="Saldos del grupo" />}>
         <p>Quién le debe a quién, separado por moneda.</p>
         <p>Y la menor cantidad de transferencias para quedar a mano.</p>
       </Feature>
-      <Feature n="04" title="Saldá con el alias" reverse image={<PhoneFrame src={saldar.url} alt="Saldar una deuda" />}>
+      <Feature n="04" title="Saldá con el alias" image={<PhoneFrame src={saldar.url} alt="Saldar una deuda" />}>
         <p>Copiás el alias y el monto, transferís desde tu banco o Mercado Pago y lo marcás como pagado.</p>
         <p>Sin comisiones: la plata no pasa por la app.</p>
       </Feature>
-      <Feature n="05" title="Totales y export">
+      <Feature n="05" title="Totales y export" reverse image={<BrowserFrame src={totales.url} alt="Totales por categoría y por mes" />}>
         <p>Cuánto gastaron por categoría o por mes, y exportá todo a CSV o JSON.</p>
       </Feature>
     </Page>

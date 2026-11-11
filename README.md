@@ -22,4 +22,4 @@ Si encontrás una vulnerabilidad, no abras un issue: avisanos por **Security →
 
 ## Licencia
 
-[GPL-3.0](LICENSE), igual que la app. La licencia es para el código: el nombre y el logo de Kachingga no se pueden usar para presentar otra app como si fuera la nuestra.
+[AGPL-3.0](LICENSE): cualquiera puede usar, estudiar y modificar el código, y quien ofrezca una versión modificada por internet tiene que publicar la suya con la misma licencia. La licencia es para el código: el nombre y el logo de Kachingga no se pueden usar para presentar otra app como si fuera la nuestra.

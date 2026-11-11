@@ -64,6 +64,7 @@ export function SiteFooter() {
         <div className="flex gap-5">
           <Link to="/privacidad" className="hover:text-primary">Privacidad</Link>
           <a href="mailto:hola@kachingga.com" className="hover:text-primary">hola@kachingga.com</a>
+          <a href="https://github.com/kachingga/.github/blob/main/SECURITY.md" className="hover:text-primary">Seguridad</a>
         </div>
       </div>
     </footer>

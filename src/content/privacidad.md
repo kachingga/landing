@@ -1,10 +1,16 @@
 # Política de privacidad
 
-*Última actualización: 10 de noviembre de 2026*
+*Última actualización: 11 de noviembre de 2026*
 
 Kachingga es una app para dividir gastos en grupo, hecha por un grupo de amigos (no es una empresa). Acá contamos qué datos guarda, para qué, quién los ve y cómo borrarlos. Describe lo que la app hace hoy, y su código es público: cualquiera puede revisarlo en [github.com/kachingga/kachingga](https://github.com/kachingga/kachingga).
 
+## Quién es el responsable
+
+El responsable de los datos de Kachingga es **Galo Benjamin Bello Ponce** (persona física). Para cualquier cosa sobre tus datos: [hola@kachingga.com](mailto:hola@kachingga.com).
+
 ## Qué datos guardamos
+
+Para usar la app hace falta una cuenta (email y contraseña, o Google). El alias y los filtros son opcionales.
 
 **Tu cuenta**
 - Tu **email** y tu **contraseña**. La contraseña se guarda cifrada: nadie la puede ver, ni nosotros.
@@ -56,6 +62,8 @@ Usamos estos servicios, y cada uno procesa los datos solo para que la app funcio
 
 **Copias de seguridad:** una por día, cifradas, que se guardan 90 días y después se borran solas.
 
+**Tus datos se guardan en Estados Unidos.** La base de datos está en Supabase y Railway, en Estados Unidos, y Sentry y Resend también los procesan allá. La ley argentina pide tu consentimiento para guardarlos en un país que la Agencia de Acceso a la Información Pública no considera de protección adecuada, como Estados Unidos (Ley 25.326, art. 12): **al crear tu cuenta o entrar, aceptás que tus datos se guarden y se procesen allá.**
+
 ## Cómo borrar tu cuenta
 
 Desde la app: **Mi cuenta → "Borrar mi cuenta"**. También podés pedirlo escribiendo a [hola@kachingga.com](mailto:hola@kachingga.com) desde el email de tu cuenta.
@@ -72,6 +80,16 @@ Qué pasa:
 - Tu alias y tu email los cambiás desde Mi cuenta.
 - Los gastos de tus grupos los podés exportar (CSV o JSON) desde la lista de gastos.
 - Para cualquier otra cosa (pedir una copia de tus datos, corregir algo o preguntar): [hola@kachingga.com](mailto:hola@kachingga.com).
+
+## Tus derechos
+
+Tenés derecho a **acceder** a tus datos, a **rectificarlos**, a **actualizarlos** y a pedir que se **supriman** (Ley 25.326, arts. 14 a 16). Para hacerlo, escribinos a [hola@kachingga.com](mailto:hola@kachingga.com) desde el email de tu cuenta y contanos qué querés.
+
+- **El acceso es gratis** si lo pedís con intervalos de al menos seis meses, salvo que tengas un interés legítimo para pedirlo antes (art. 14). Rectificar, actualizar o suprimir es siempre gratis.
+- Te respondemos un pedido de acceso dentro de los **10 días corridos**, y uno de rectificación, actualización o supresión dentro de los **5 días hábiles**.
+- Lo que figura en tus grupos (tu nombre, tus gastos y tus pagos) no se suprime, porque es parte de las cuentas de los demás: la ley no obliga a suprimir cuando eso perjudica a otros (art. 16). Sí se puede cambiar el nombre con el que figurás.
+
+LA AGENCIA DE ACCESO A LA INFORMACIÓN PÚBLICA, en su carácter de Órgano de Control de la Ley N° 25.326, tiene la atribución de atender las denuncias y reclamos que interpongan quienes resulten afectados en sus derechos por incumplimiento de las normas vigentes en materia de protección de datos personales.
 
 ## Cambios
 

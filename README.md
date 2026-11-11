@@ -1,6 +1,6 @@
 # Kachingga — landing
 
-La página pública de **[Kachingga](https://kachingga.com)**, la app para dividir gastos en grupo: qué es, cómo funciona (con capturas de la app) y la **[política de privacidad](https://kachingga.com/privacidad)**.
+La página pública de **[Kachingga](https://kachingga.com)**, la app para dividir gastos en grupo: qué es, cómo funciona (con capturas de la app), la **[política de privacidad](https://kachingga.com/privacidad)** y los **[términos de uso](https://kachingga.com/terminos)**.
 
 - **App:** [app.kachingga.com](https://app.kachingga.com). Su código está en [kachingga/kachingga](https://github.com/kachingga/kachingga).
 - **Contacto:** [hola@kachingga.com](mailto:hola@kachingga.com).
@@ -14,7 +14,7 @@ La página pública de **[Kachingga](https://kachingga.com)**, la app para divid
 
 ## Lo que no se puede romper
 
-Está en [`AGENTS.md`](AGENTS.md) → "Kachingga" (lo leen Lovable y Claude): el `public/sw.js`, el script que limpia el `localStorage`, el nombre exacto "Kachingga", el botón "Entrar", nada de pedidos a otros dominios y la política de privacidad tal cual.
+Está en [`AGENTS.md`](AGENTS.md) → "Kachingga" (lo leen Lovable y Claude): el `public/sw.js`, el script que limpia el `localStorage`, el nombre exacto "Kachingga", el botón "Entrar", nada de pedidos a otros dominios, y la política de privacidad y los términos tal cual.
 
 ## Seguridad
 

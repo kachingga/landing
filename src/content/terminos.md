@@ -38,7 +38,7 @@ Para que Kachingga ande bien y sea segura para todos, no se puede:
 
 - **Cargar datos de otras personas que no hagan falta para dividir los gastos.** Para alguien que no usa la app alcanza con el nombre con el que lo conoce el grupo. No pongas en descripciones o notas datos como documentos, direcciones, teléfonos o datos de salud.
 - **Hacerte pasar por otra persona**, por ejemplo reclamar en un grupo a alguien que no sos vos.
-- **Intentar entrar a grupos o cuentas ajenas**, adivinar códigos de invitación o aprovechar fallas de seguridad. Si encontrás una, no la publiques ni la uses: avisanos a [hola@kachingga.com](mailto:hola@kachingga.com) o desde [Seguridad](https://github.com/kachingga/.github/blob/main/SECURITY.md).
+- **Intentar entrar a grupos o cuentas ajenas**, adivinar códigos de invitación o aprovechar fallas de seguridad. Si encontrás una, no la publiques ni la uses: avisanos a [hola@kachingga.com](mailto:hola@kachingga.com) o desde [Seguridad](/seguridad).
 - **Automatizar pedidos** (bots, scripts) o usar la app de una forma que la sobrecargue o esquive sus límites.
 - Usarla para algo ilegal o para engañar a otros.
 

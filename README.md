@@ -14,11 +14,11 @@ La página pública de **[Kachingga](https://kachingga.com)**, la app para divid
 
 ## Lo que no se puede romper
 
-Está en [`AGENTS.md`](AGENTS.md) → "Kachingga" (lo leen Lovable y Claude): el `public/sw.js`, el script que limpia el `localStorage`, el nombre exacto "Kachingga", el botón "Entrar", nada de pedidos a otros dominios, y la política de privacidad y los términos tal cual.
+Está en [`AGENTS.md`](AGENTS.md) → "Kachingga" (lo leen Lovable y Claude): el `public/sw.js`, el script que limpia el `localStorage`, el nombre exacto "Kachingga", el botón "Entrar", nada de pedidos a otros dominios, y las políticas de privacidad y de seguridad y los términos tal cual.
 
 ## Seguridad
 
-Si encontrás una vulnerabilidad, no abras un issue: avisanos por **Security → Report a vulnerability** o a [hola@kachingga.com](mailto:hola@kachingga.com).
+Si encontrás una vulnerabilidad, no abras un issue: avisanos por **Security → Report a vulnerability** o a [hola@kachingga.com](mailto:hola@kachingga.com). Qué cubre y cómo la manejamos: [kachingga.com/seguridad](https://kachingga.com/seguridad) (`src/content/seguridad.md`).
 
 ## Licencia
 

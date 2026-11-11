@@ -65,7 +65,7 @@ export function SiteFooter() {
           <Link to="/privacidad" className="hover:text-primary">Privacidad</Link>
           <Link to="/terminos" className="hover:text-primary">Términos</Link>
           <a href="mailto:hola@kachingga.com" className="hover:text-primary">hola@kachingga.com</a>
-          <a href="https://github.com/kachingga/.github/blob/main/SECURITY.md" className="hover:text-primary">Seguridad</a>
+          <Link to="/seguridad" className="hover:text-primary">Seguridad</Link>
         </div>
       </div>
     </footer>

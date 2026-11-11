@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PrivacidadRouteImport } from './routes/privacidad'
+import { Route as SeguridadRouteImport } from './routes/seguridad'
 import { Route as TerminosRouteImport } from './routes/terminos'
 
 const IndexRoute = IndexRouteImport.update({
@@ -23,6 +24,11 @@ const PrivacidadRoute = PrivacidadRouteImport.update({
   path: '/privacidad',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SeguridadRoute = SeguridadRouteImport.update({
+  id: '/seguridad',
+  path: '/seguridad',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TerminosRoute = TerminosRouteImport.update({
   id: '/terminos',
   path: '/terminos',
@@ -32,30 +38,34 @@ const TerminosRoute = TerminosRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/privacidad': typeof PrivacidadRoute
+  '/seguridad': typeof SeguridadRoute
   '/terminos': typeof TerminosRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/privacidad': typeof PrivacidadRoute
+  '/seguridad': typeof SeguridadRoute
   '/terminos': typeof TerminosRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/privacidad': typeof PrivacidadRoute
+  '/seguridad': typeof SeguridadRoute
   '/terminos': typeof TerminosRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/privacidad' | '/terminos'
+  fullPaths: '/' | '/privacidad' | '/seguridad' | '/terminos'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/privacidad' | '/terminos'
-  id: '__root__' | '/' | '/privacidad' | '/terminos'
+  to: '/' | '/privacidad' | '/seguridad' | '/terminos'
+  id: '__root__' | '/' | '/privacidad' | '/seguridad' | '/terminos'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   PrivacidadRoute: typeof PrivacidadRoute
+  SeguridadRoute: typeof SeguridadRoute
   TerminosRoute: typeof TerminosRoute
 }
 
@@ -75,6 +85,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivacidadRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/seguridad': {
+      id: '/seguridad'
+      path: '/seguridad'
+      fullPath: '/seguridad'
+      preLoaderRoute: typeof SeguridadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/terminos': {
       id: '/terminos'
       path: '/terminos'
@@ -88,6 +105,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   PrivacidadRoute: PrivacidadRoute,
+  SeguridadRoute: SeguridadRoute,
   TerminosRoute: TerminosRoute,
 }
 export const routeTree = rootRouteImport

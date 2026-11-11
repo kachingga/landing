@@ -9,7 +9,7 @@
 @source "../src";
 @import "tw-animate-css";
 
-@custom-variant dark (@media (prefers-color-scheme: dark));
+@custom-variant dark (&:where(.dark, .dark *));
 
 /*
  * Design system definition.
@@ -112,8 +112,8 @@
   --sidebar-ring: oklch(0.704 0.04 256.788);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
+.dark {
+  & {
     color-scheme: dark;
     --background: oklch(0.2 0.025 160);
     --foreground: oklch(0.95 0.012 85);

@@ -86,6 +86,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:title", content: "Kachingga" },
       { property: "og:description", content: "Dividí gastos con tu grupo" },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Kachingga" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
@@ -102,6 +103,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
     ],
     scripts: [
+      {
+        // Theme: the visitor's choice ("tema" in localStorage) or the device setting.
+        children: `try{var t=localStorage.getItem('tema');var d=t?t==='oscuro':matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.classList.toggle('dark',d)}catch(e){}`,
+      },
       {
         children: `// kachingga.com used to be the app: remove what it left in this browser (the session, \`sb-*\`, and
 // the copy of the groups, theme and palette, \`kachingga-*\`).
@@ -121,7 +126,7 @@ try {
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="es">
+    <html lang="es" suppressHydrationWarning>
       <head>
         <HeadContent />
       </head>

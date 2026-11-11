@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import type { ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
+import { Moon, Sun } from "lucide-react";
 import logo from "@/assets/logo.svg";
 
 export const APP_URL = "https://app.kachingga.com";
@@ -15,6 +16,29 @@ export function EntrarButton({ className = "" }: { className?: string }) {
   );
 }
 
+function ThemeToggle() {
+  const [dark, setDark] = useState(false);
+  useEffect(() => setDark(document.documentElement.classList.contains("dark")), []);
+  const toggle = () => {
+    const next = !dark;
+    document.documentElement.classList.toggle("dark", next);
+    try {
+      localStorage.setItem("tema", next ? "oscuro" : "claro");
+    } catch {}
+    setDark(next);
+  };
+  return (
+    <button
+      type="button"
+      onClick={toggle}
+      aria-label={dark ? "Pasar a modo claro" : "Pasar a modo oscuro"}
+      className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border text-primary transition hover:bg-muted"
+    >
+      {dark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+    </button>
+  );
+}
+
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-10 border-b border-border bg-background/90 backdrop-blur">
@@ -23,7 +47,10 @@ export function SiteHeader() {
           <img src={logo} alt="" className="h-9 w-9" />
           <span className="font-display text-xl font-extrabold text-primary">Kachingga</span>
         </Link>
-        <EntrarButton className="px-5 py-2 text-sm" />
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+          <EntrarButton className="px-5 py-2 text-sm" />
+        </div>
       </div>
     </header>
   );
@@ -47,10 +74,10 @@ type Shot = { light: string; dark: string };
 
 function Screenshot({ src, alt, w, h, className }: { src: Shot; alt: string; w: number; h: number; className: string }) {
   return (
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcSet={src.dark} />
-      <img src={src.light} alt={alt} width={w} height={h} loading="lazy" className={className} />
-    </picture>
+    <>
+      <img src={src.light} alt={alt} width={w} height={h} loading="lazy" className={`${className} dark:hidden`} />
+      <img src={src.dark} alt={alt} width={w} height={h} loading="lazy" className={`${className} hidden dark:block`} />
+    </>
   );
 }
 

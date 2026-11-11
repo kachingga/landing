@@ -44,6 +44,35 @@ function isH3SwallowedErrorBody(body: string): boolean {
   }
 }
 
+// Security headers for the pages of kachingga.com (kachingga/kachingga#146): nobody can show them
+// inside another site (clickjacking), and nothing loads from other domains (see AGENTS.md). Only on
+// the real domain: Lovable's editor shows the preview inside an iframe, and these would break it.
+const SITE_HOSTS = new Set(["kachingga.com", "www.kachingga.com"]);
+
+// Everything comes from kachingga.com itself, Lovable's analytics included (/__l5e/…). Inline
+// scripts stay allowed: the head() ones of __root.tsx and the ones TanStack Start adds to each page.
+const CONTENT_SECURITY_POLICY = [
+  "default-src 'self'",
+  "script-src 'self' 'unsafe-inline'",
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data:",
+  "font-src 'self'",
+  "connect-src 'self'",
+  "object-src 'none'",
+  "base-uri 'self'",
+  "form-action 'self'",
+  "frame-ancestors 'none'",
+].join("; ");
+
+function withSecurityHeaders(request: Request, response: Response): Response {
+  const isPage = (response.headers.get("content-type") ?? "").startsWith("text/html");
+  if (!isPage || !SITE_HOSTS.has(new URL(request.url).hostname)) return response;
+  const secured = new Response(response.body, response);
+  secured.headers.set("Content-Security-Policy", CONTENT_SECURITY_POLICY);
+  secured.headers.set("X-Frame-Options", "DENY");
+  return secured;
+}
+
 // Hosting compresses every response at the edge. Never compress a body (gzip, brotli,
 // CompressionStream) or set content-encoding here or in a server route: the body gets encoded
 // twice and renders garbled.
@@ -52,13 +81,14 @@ export default {
     try {
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
-      return await normalizeCatastrophicSsrResponse(response);
+      return withSecurityHeaders(request, await normalizeCatastrophicSsrResponse(response));
     } catch (error) {
       console.error(error);
-      return new Response(renderErrorPage(), {
+      const errorPage = new Response(renderErrorPage(), {
         status: 500,
         headers: { "content-type": "text/html; charset=utf-8" },
       });
+      return withSecurityHeaders(request, errorPage);
     }
   },
 };

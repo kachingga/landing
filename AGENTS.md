@@ -39,6 +39,7 @@ Reglas de este proyecto. Valen para Lovable, para Claude y para quien edite. Con
 - **El botón principal es "Entrar" y lleva a `https://app.kachingga.com`.** Nada de "Creá tu cuenta" ni "Registrate". UptimeRobot avisa si ese link desaparece de la página.
 - **Sin pedidos a otros dominios:** nada de analítica (aparte de la de Lovable), cookies, píxeles, ni tipografías o scripts de terceros. Las tipografías van con `@fontsource`. Si algo nuevo manda datos a otro lado, la política de privacidad lo tiene que decir.
 - **`src/content/privacidad.md` es la política de privacidad de la app** y dice lo que la app guarda de verdad. Se cambia solo cuando cambia la app o el hosting, nunca para resumirla o reescribirla.
+- **Los headers de seguridad de `src/server.ts` se quedan:** las páginas de `kachingga.com` mandan `Content-Security-Policy` (con `frame-ancestors 'none'`) y `X-Frame-Options: DENY`, así nadie puede mostrar la landing dentro de otro sitio. La CSP solo deja cargar cosas de `kachingga.com`: algo de otro dominio (script, imagen, tipografía, conexión) no anda, a propósito. Se mandan solo en el dominio real, para no romper la vista previa de Lovable.
 - **Es estática, sin backend:** nada de Lovable Cloud, Supabase, login ni base de datos.
 - **Textos en español de Argentina**, con voseo.
 - **Seguridad:** una vulnerabilidad se avisa por Security → Report a vulnerability o a `hola@kachingga.com`, nunca en un issue público.

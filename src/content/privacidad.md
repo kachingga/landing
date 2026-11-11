@@ -23,13 +23,14 @@ Kachingga es una app para dividir gastos en grupo, hecha por un grupo de amigos 
 - Mientras tenés una sesión abierta, el servicio de login (Supabase) guarda la dirección IP y el navegador desde los que entraste.
 - Como cualquier sitio web, los servidores ven tu dirección IP cuando te conectás. La app no la guarda: solo la usa en el momento para limitar la cantidad de pedidos y frenar abusos.
 - Si la app falla, se manda un reporte del error a Sentry con el navegador y el sistema operativo, identificado solo con un número interno de tu cuenta. No lleva tu email, tu nombre ni nada de tus grupos (montos, descripciones, alias).
+- **Esta página (`kachingga.com`)** está alojada en Lovable, que lleva estadísticas de visitas: qué páginas se ven, de dónde llegan y cuánto tardan en cargar. No graba lo que hacés en la página. El hosting usa dos cookies técnicas (de Cloudflare y de Lovable) que duran como mucho un día; ninguna es de publicidad. La app (`app.kachingga.com`) no tiene analítica.
 
 **En tu dispositivo**
 - La app guarda en el navegador tu sesión (para no pedirte la contraseña cada vez), una copia de los datos de tus grupos para que los puedas ver sin conexión y tus preferencias de tema y color. Al cerrar sesión o borrar tu cuenta se borran la sesión y esa copia.
 
 **Lo que no hacemos**
 - No vendemos tus datos ni los usamos para publicidad.
-- La app no usa herramientas de analítica ni cookies de seguimiento.
+- La app no usa herramientas de analítica ni cookies de seguimiento (las estadísticas de visitas de esta página, arriba, son de Lovable).
 - No te mandamos mails de promociones: solo los de tu cuenta (confirmar el email, recuperar la contraseña y cambiar el email).
 - No movemos plata ni pedimos datos de tu banco: los pagos entre ustedes se hacen fuera de la app.
 
@@ -51,6 +52,7 @@ Usamos estos servicios, y cada uno procesa los datos solo para que la app funcio
 - **Cloudflare Turnstile:** el captcha de las pantallas de entrar, registrarse y recuperar la contraseña. Analiza datos técnicos de tu navegador para distinguir personas de bots.
 - **Sentry:** recibe los reportes de errores (ver "Datos técnicos").
 - **Google:** solo si elegís entrar con Google.
+- **Lovable:** donde está alojada esta página (`kachingga.com`).
 
 **Copias de seguridad:** una por día, cifradas, que se guardan 90 días y después se borran solas.
 

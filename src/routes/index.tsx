@@ -1,12 +1,24 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 import { BrowserFrame, EntrarButton, Page, PhoneFrame } from "@/components/site";
-import grupo from "@/assets/celu-2-grupo-claro.webp.asset.json";
-import gasto from "@/assets/celu-5-gasto-claro.webp.asset.json";
-import dividir from "@/assets/celu-6-dividir-claro.webp.asset.json";
-import grupoCompu from "@/assets/compu-2-grupo-claro.webp.asset.json";
-import totales from "@/assets/compu-4-totales-claro.webp.asset.json";
-import saldar from "@/assets/celu-3-saldar-claro.webp.asset.json";
+import grupoL from "@/assets/celu-2-grupo-claro.webp.asset.json";
+import grupoD from "@/assets/celu-2-grupo-oscuro.webp.asset.json";
+const grupo = { light: grupoL.url, dark: grupoD.url };
+import gastoL from "@/assets/celu-5-gasto-claro.webp.asset.json";
+import gastoD from "@/assets/celu-5-gasto-oscuro.webp.asset.json";
+const gasto = { light: gastoL.url, dark: gastoD.url };
+import dividirL from "@/assets/celu-6-dividir-claro.webp.asset.json";
+import dividirD from "@/assets/celu-6-dividir-oscuro.webp.asset.json";
+const dividir = { light: dividirL.url, dark: dividirD.url };
+import grupoCompuL from "@/assets/compu-2-grupo-claro.webp.asset.json";
+import grupoCompuD from "@/assets/compu-2-grupo-oscuro.webp.asset.json";
+const grupoCompu = { light: grupoCompuL.url, dark: grupoCompuD.url };
+import totalesL from "@/assets/compu-4-totales-claro.webp.asset.json";
+import totalesD from "@/assets/compu-4-totales-oscuro.webp.asset.json";
+const totales = { light: totalesL.url, dark: totalesD.url };
+import saldarL from "@/assets/celu-3-saldar-claro.webp.asset.json";
+import saldarD from "@/assets/celu-3-saldar-oscuro.webp.asset.json";
+const saldar = { light: saldarL.url, dark: saldarD.url };
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -55,31 +67,31 @@ function Index() {
           </div>
           <div className="md:w-3/5">
             <div className="md:hidden">
-              <PhoneFrame src={grupo.url} alt="Pantalla de un grupo en Kachingga" />
+              <PhoneFrame src={grupo} alt="Pantalla de un grupo en Kachingga" />
             </div>
             <div className="hidden md:block">
-              <BrowserFrame src={grupoCompu.url} alt="Pantalla de un grupo en Kachingga" />
+              <BrowserFrame src={grupoCompu} alt="Pantalla de un grupo en Kachingga" />
             </div>
           </div>
         </div>
       </section>
 
-      <Feature n="01" title="Cargá los gastos" reverse image={<PhoneFrame src={gasto.url} alt="Cargar un gasto" />}>
+      <Feature n="01" title="Cargá los gastos" reverse image={<PhoneFrame src={gasto} alt="Cargar un gasto" />}>
         <p>Anotá quién pagó y en qué moneda: pesos, dólares y otras, con el dólar blue o el oficial.</p>
         <p>La categoría se sugiere sola.</p>
       </Feature>
-      <Feature n="02" title="Dividí como quieras" image={<PhoneFrame src={dividir.url} alt="Dividir un gasto" />}>
+      <Feature n="02" title="Dividí como quieras" image={<PhoneFrame src={dividir} alt="Dividir un gasto" />}>
         <p>En partes iguales, por monto o por porcentaje.</p>
       </Feature>
-      <Feature n="03" title="Mirá los saldos" reverse image={<PhoneFrame src={grupo.url} alt="Saldos del grupo" />}>
+      <Feature n="03" title="Mirá los saldos" reverse image={<PhoneFrame src={grupo} alt="Saldos del grupo" />}>
         <p>Quién le debe a quién, separado por moneda.</p>
         <p>Y la menor cantidad de transferencias para quedar a mano.</p>
       </Feature>
-      <Feature n="04" title="Saldá con el alias" image={<PhoneFrame src={saldar.url} alt="Saldar una deuda" />}>
+      <Feature n="04" title="Saldá con el alias" image={<PhoneFrame src={saldar} alt="Saldar una deuda" />}>
         <p>Copiás el alias y el monto, transferís desde tu banco o Mercado Pago y lo marcás como pagado.</p>
         <p>Sin comisiones: la plata no pasa por la app.</p>
       </Feature>
-      <Feature n="05" title="Totales y export" reverse image={<BrowserFrame src={totales.url} alt="Totales por categoría y por mes" />}>
+      <Feature n="05" title="Totales y export" reverse image={<BrowserFrame src={totales} alt="Totales por categoría y por mes" />}>
         <p>Cuánto gastaron por categoría o por mes, y exportá todo a CSV o JSON.</p>
       </Feature>
     </Page>

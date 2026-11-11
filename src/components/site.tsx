@@ -43,15 +43,26 @@ export function SiteFooter() {
   );
 }
 
-export function PhoneFrame({ src, alt }: { src: string; alt: string }) {
+type Shot = { light: string; dark: string };
+
+function Screenshot({ src, alt, w, h, className }: { src: Shot; alt: string; w: number; h: number; className: string }) {
   return (
-    <div className="mx-auto w-[240px] rounded-[2.6rem] bg-foreground p-2.5 shadow-2xl sm:w-[270px]">
-      <img src={src} alt={alt} width={887} height={1920} loading="lazy" className="w-full rounded-[2.1rem]" />
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcSet={src.dark} />
+      <img src={src.light} alt={alt} width={w} height={h} loading="lazy" className={className} />
+    </picture>
+  );
+}
+
+export function PhoneFrame({ src, alt }: { src: Shot; alt: string }) {
+  return (
+    <div className="mx-auto w-[240px] rounded-[2.6rem] bg-foreground p-2.5 dark:bg-card dark:ring-1 dark:ring-border shadow-2xl sm:w-[270px]">
+      <Screenshot src={src} alt={alt} w={887} h={1920} className="w-full rounded-[2.1rem]" />
     </div>
   );
 }
 
-export function BrowserFrame({ src, alt }: { src: string; alt: string }) {
+export function BrowserFrame({ src, alt }: { src: Shot; alt: string }) {
   return (
     <div className="overflow-hidden rounded-xl border border-border bg-card shadow-2xl">
       <div className="flex items-center gap-1.5 border-b border-border bg-muted px-3 py-2">
@@ -60,7 +71,7 @@ export function BrowserFrame({ src, alt }: { src: string; alt: string }) {
         <span className="h-2.5 w-2.5 rounded-full bg-primary/40" />
         <span className="ml-3 flex-1 truncate rounded-md bg-background px-3 py-0.5 text-xs text-muted-foreground">app.kachingga.com</span>
       </div>
-      <img src={src} alt={alt} width={1920} height={1200} loading="lazy" className="block w-full" />
+      <Screenshot src={src} alt={alt} w={1920} h={1200} className="block w-full" />
     </div>
   );
 }

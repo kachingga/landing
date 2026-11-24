@@ -1,6 +1,6 @@
 # Términos de uso
 
-*Última actualización: 11 de noviembre de 2026*
+*Última actualización: 24 de noviembre de 2026*
 
 Estas son las condiciones para usar Kachingga, la app para dividir gastos en grupo (`app.kachingga.com`). Al crear tu cuenta o entrar, las aceptás junto con la [Política de privacidad](/privacidad), que cuenta qué datos guardamos, para qué y quién los ve.
 
@@ -30,6 +30,7 @@ Estas son las condiciones para usar Kachingga, la app para dividir gastos en gru
 
 - **Dentro de un grupo, todo es compartido.** Cada miembro ve todos los gastos, los pagos, los saldos, los nombres y los alias para cobrar de los demás.
 - **Todos pueden cambiar todo.** No hay administrador: cualquier miembro puede cargar, editar o borrar cualquier gasto, registrar o borrar pagos, agregar o renombrar personas, cambiar las categorías, renombrar o archivar el grupo y generar un código nuevo. Armá grupos con gente de confianza.
+- **Los cambios se avisan.** Cuando alguien carga, edita o borra un gasto o un pago, les llega una notificación a las personas que están en él (en la app y, si la activaron, en su celu o su compu), con quién lo hizo, qué y el monto.
 - **El código de invitación da acceso.** Quien lo tenga puede entrar al grupo y ver todo. Compartilo solo con la gente del grupo; si se filtra, generá uno nuevo desde el grupo y el anterior deja de servir.
 
 ## Uso aceptable

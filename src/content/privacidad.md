@@ -15,13 +15,14 @@ Para usar la app hace falta una cuenta (email y contraseña, o Google). El alias
 **Tu cuenta**
 - Tu **email** y tu **contraseña**. La contraseña se guarda cifrada: nadie la puede ver, ni nosotros.
 - Si entrás con **Google**, Google nos pasa tu nombre, tu email y el link a tu foto de perfil. Usamos el nombre para saludarte; la foto no la usamos.
+- Tu **foto**, si cargás una. Antes de guardarla le sacamos los datos que traen las fotos del celu (como la ubicación donde se sacó).
 - Tu **alias o CVU/CBU** para cobrar, si lo cargás.
 - Tus **filtros guardados**.
 - Tus **notificaciones**: los cambios que otros hicieron en gastos y pagos en los que estás (quién, qué y cuándo) y si ya las viste. Guardamos las últimas 50.
 - Si las activás en un **dispositivo**: la dirección y las claves que le da a tu navegador su servicio de notificaciones (de Google, Apple, Mozilla o Microsoft, según el navegador) para mandártelas cifradas, y los grupos que silenciaste.
 
 **Lo que se carga en los grupos**
-- El nombre del grupo, su moneda y su código de invitación.
+- El nombre del grupo, su moneda, su código de invitación y, si le ponen, su emoji y su foto.
 - El **nombre** con el que figura cada persona. Puede incluir gente que no usa la app: la agrega otro miembro del grupo.
 - Los **gastos**: descripción, categoría, fecha, monto, moneda, tipo de cambio, quién pagó, cómo se dividió y qué cuenta lo cargó.
 - Los **pagos** entre personas ("ya te pagué"): quién le pagó a quién, cuánto, cuándo y una nota opcional.
@@ -48,6 +49,7 @@ Para usar la app hace falta una cuenta (email y contraseña, o Google). El alias
 - **Lo de un grupo lo ven solo sus miembros.** Dentro del grupo todo es compartido: cada miembro ve todos los gastos, los pagos, los saldos, los nombres y los alias para cobrar de los demás. Para quien no es miembro, el grupo no existe.
 - **Para entrar a un grupo hace falta su código de invitación**, y quien lo tenga puede unirse y ver todo. Compartilo solo con la gente del grupo. Si se filtra, se puede generar uno nuevo desde el grupo y el anterior deja de servir.
 - **Tu email no lo ve nadie del grupo.**
+- **Tu foto la ven los miembros de tus grupos**, y la del grupo, sus miembros. La app las muestra con links que vencen a los pocos días: quien tenga uno la puede ver mientras dure.
 - **Tus filtros guardados y tus notificaciones los ves solo vos.**
 - **Las notificaciones se ven en tu dispositivo**, también con el celu bloqueado (salvo que lo configures para ocultar su contenido): dicen el grupo, quién hizo qué y el monto.
 - Quienes mantenemos la app tenemos acceso técnico a la base de datos para que funcione y para arreglar problemas.
@@ -58,6 +60,7 @@ Usamos estos servicios, y cada uno procesa los datos solo para que la app funcio
 
 - **Supabase:** la base de datos y el login. En Estados Unidos.
 - **Railway:** donde corre la app. En Estados Unidos.
+- **Cloudflare R2:** las fotos de perfil y de grupo. En Estados Unidos.
 - **Resend:** manda los mails de tu cuenta.
 - **Cloudflare Turnstile:** el captcha de las pantallas de entrar, registrarse y recuperar la contraseña. Analiza datos técnicos de tu navegador para distinguir personas de bots.
 - **Sentry:** recibe los reportes de errores (ver "Datos técnicos").
@@ -67,7 +70,7 @@ Usamos estos servicios, y cada uno procesa los datos solo para que la app funcio
 
 **Copias de seguridad:** una por día, cifradas, que se guardan 90 días y después se borran solas.
 
-**Tus datos se guardan en Estados Unidos.** La base de datos está en Supabase y Railway, en Estados Unidos, y Sentry y Resend también los procesan allá. La ley argentina pide tu consentimiento para guardarlos en un país que la Agencia de Acceso a la Información Pública no considera de protección adecuada, como Estados Unidos (Ley 25.326, art. 12): **al crear tu cuenta o entrar, aceptás que tus datos se guarden y se procesen allá.**
+**Tus datos se guardan en Estados Unidos.** La base de datos está en Supabase y Railway y las fotos en Cloudflare R2, en Estados Unidos, y Sentry y Resend también los procesan allá. La ley argentina pide tu consentimiento para guardarlos en un país que la Agencia de Acceso a la Información Pública no considera de protección adecuada, como Estados Unidos (Ley 25.326, art. 12): **al crear tu cuenta o entrar, aceptás que tus datos se guarden y se procesen allá.**
 
 ## Cómo borrar tu cuenta
 
@@ -75,14 +78,14 @@ Desde la app: **Mi cuenta → "Borrar mi cuenta"**. También podés pedirlo escr
 
 Qué pasa:
 - **No podés volver a entrar con esa cuenta**, y las sesiones que tenías abiertas dejan de servir. No se puede deshacer.
-- **Se borran** tu contraseña, tus alias para cobrar (el de la cuenta y los de cada grupo), tus filtros guardados, tus notificaciones y los dispositivos donde las activaste. **Tu email deja de guardarse**: queda reemplazado por un código, así que podés volver a registrarte con el mismo email.
+- **Se borran** tu contraseña, tu foto, tus alias para cobrar (el de la cuenta y los de cada grupo), tus filtros guardados, tus notificaciones y los dispositivos donde las activaste. **Tu email deja de guardarse**: queda reemplazado por un código, así que podés volver a registrarte con el mismo email.
 - **No te saca de tus grupos.** Seguís figurando con tu nombre, como alguien sin cuenta, con tus gastos, tus pagos y tus saldos, porque son parte de las cuentas de los demás. **Tus deudas quedan en el grupo a tu nombre**; antes de confirmar, la app te muestra lo que tengas pendiente. Cualquier miembro del grupo puede cambiar el nombre con el que figurás.
 - Si volvés, te registrás de nuevo y te podés "reclamar" en el grupo con su código.
 - Las copias de seguridad anteriores al borrado se borran solas a los 90 días.
 
 ## Tus datos, a mano
 
-- Tu alias y tu email los cambiás desde Mi cuenta.
+- Tu foto, tu alias y tu email los cambiás desde Mi cuenta.
 - Las notificaciones las activás o desactivás desde Mi cuenta, en cada dispositivo, y silenciás un grupo desde su menú.
 - Los gastos de tus grupos los podés exportar (CSV o JSON) desde la lista de gastos.
 - Para cualquier otra cosa (pedir una copia de tus datos, corregir algo o preguntar): [hola@kachingga.com](mailto:hola@kachingga.com).

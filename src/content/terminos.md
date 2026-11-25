@@ -29,7 +29,7 @@ Estas son las condiciones para usar Kachingga, la app para dividir gastos en gru
 ## Los grupos
 
 - **Dentro de un grupo, todo es compartido.** Cada miembro ve todos los gastos, los pagos, los saldos, los nombres y los alias para cobrar de los demás.
-- **Todos pueden cambiar todo.** No hay administrador: cualquier miembro puede cargar, editar o borrar cualquier gasto, registrar o borrar pagos, agregar o renombrar personas, cambiar las categorías, renombrar o archivar el grupo y generar un código nuevo. Armá grupos con gente de confianza.
+- **Todos pueden cambiar todo.** No hay administrador: cualquier miembro puede cargar, editar o borrar cualquier gasto, registrar o borrar pagos, agregar o renombrar personas, cambiar las categorías, renombrar el grupo, cambiarle el emoji o la foto, archivarlo y generar un código nuevo. Armá grupos con gente de confianza.
 - **Los cambios se avisan.** Cuando alguien carga, edita o borra un gasto o un pago, les llega una notificación a las personas que están en él (en la app y, si la activaron, en su celu o su compu), con quién lo hizo, qué y el monto.
 - **El código de invitación da acceso.** Quien lo tenga puede entrar al grupo y ver todo. Compartilo solo con la gente del grupo; si se filtra, generá uno nuevo desde el grupo y el anterior deja de servir.
 
@@ -38,7 +38,8 @@ Estas son las condiciones para usar Kachingga, la app para dividir gastos en gru
 Para que Kachingga ande bien y sea segura para todos, no se puede:
 
 - **Cargar datos de otras personas que no hagan falta para dividir los gastos.** Para alguien que no usa la app alcanza con el nombre con el que lo conoce el grupo. No pongas en descripciones o notas datos como documentos, direcciones, teléfonos o datos de salud.
-- **Hacerte pasar por otra persona**, por ejemplo reclamar en un grupo a alguien que no sos vos.
+- **Hacerte pasar por otra persona**, por ejemplo reclamar en un grupo a alguien que no sos vos, o poner de foto de perfil la de otra persona.
+- **Subir fotos ofensivas o ilegales**, en tu perfil o en un grupo.
 - **Intentar entrar a grupos o cuentas ajenas**, adivinar códigos de invitación o aprovechar fallas de seguridad. Si encontrás una, no la publiques ni la uses: avisanos a [hola@kachingga.com](mailto:hola@kachingga.com) o desde [Seguridad](/seguridad).
 - **Automatizar pedidos** (bots, scripts) o usar la app de una forma que la sobrecargue o esquive sus límites.
 - Usarla para algo ilegal o para engañar a otros.
@@ -47,7 +48,7 @@ Si una cuenta no respeta estos términos, la podemos suspender o dar de baja. Lo
 
 ## Lo que cargás
 
-- Lo que cargás (gastos, pagos, nombres, notas) sigue siendo tuyo. Nos das permiso para guardarlo, usarlo para calcular saldos y totales y mostrárselo a los miembros de tu grupo, solo para que la app funcione. Nada más: no lo vendemos ni lo usamos para publicidad. Qué se guarda, dónde y por cuánto tiempo: [Política de privacidad](/privacidad).
+- Lo que cargás (gastos, pagos, nombres, notas, fotos) sigue siendo tuyo. Nos das permiso para guardarlo, usarlo para calcular saldos y totales y mostrárselo a los miembros de tu grupo, solo para que la app funcione. Nada más: no lo vendemos ni lo usamos para publicidad. Qué se guarda, dónde y por cuánto tiempo: [Política de privacidad](/privacidad).
 - Lo que cargás en un grupo lo pueden cambiar o borrar los demás miembros, y queda en el grupo aunque borres tu cuenta.
 - Podés exportar los gastos de tus grupos (CSV o JSON) desde la lista de gastos.
 
